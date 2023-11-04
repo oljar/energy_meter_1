@@ -20,8 +20,10 @@ model = Model('')
 
 view = View(V.window)
 
+
 controller = Controller(model, view)
 controller.settings()
+controller.execut()
 
 # set the controller to view
 view.set_controller(controller)
@@ -29,7 +31,7 @@ view.set_controller(controller)
 
 
 V.tab_parent.add(V.tab0,text = 'settings')
-V.tab_parent.add(V.tab1,text = 'identyfikacja')
+V.tab_parent.add(V.tab1,text = 'identification')
 
 V.tab_parent.pack(expand = 1, fill = 'both')
 

@@ -7,7 +7,7 @@ from Model import Model
 
 window = tk.Tk()
 window.title("EVOT_printer")
-window.geometry('660x480')
+window.geometry('0x0')
 
 tab_parent = ttk.Notebook(window)
 tab0 = ttk.Frame(tab_parent)
