@@ -32,7 +32,23 @@ class View(ttk.Frame):
         self.dev_4_adr_var = tk.StringVar()
         self.mod_4_adr_var = tk.StringVar()
 
+        self.dev_5_adr_var = tk.StringVar()
+        self.mod_5_adr_var = tk.StringVar()
 
+        self.dev_6_adr_var = tk.StringVar()
+        self.mod_6_adr_var = tk.StringVar()
+
+        self.dev_7_adr_var = tk.StringVar()
+        self.mod_7_adr_var = tk.StringVar()
+
+        self.dev_8_adr_var = tk.StringVar()
+        self.mod_8_adr_var = tk.StringVar()
+
+        self.dev_9_adr_var = tk.StringVar()
+        self.mod_9_adr_var = tk.StringVar()
+
+        self.dev_10_adr_var = tk.StringVar()
+        self.mod_10_adr_var = tk.StringVar()
 
 
 
@@ -47,7 +63,7 @@ class View(ttk.Frame):
 
 
 
-        self.label = ttk.Label(self.labelframe01, text='Wykres 01 - adres modbus')
+        self.label = ttk.Label(self.labelframe01, text='Zapis/Wykres 01 - adres modbus')
         self.label.grid(row=6, column=2)
 
         self.dist = ttk.Label(self.labelframe01)
@@ -76,7 +92,7 @@ class View(ttk.Frame):
 
         ########################################################################################################################
 
-        self.label = ttk.Label(self.labelframe01, text='Wykres 02 - adres modbus')
+        self.label = ttk.Label(self.labelframe01, text='Zapis/Wykres 02 - adres modbus')
         self.label.grid(row=10, column=2)
 
         self.mod_2_adr_entry = ttk.Entry(self.labelframe01, textvariable = self.mod_2_adr_var)
@@ -100,7 +116,7 @@ class View(ttk.Frame):
         self.dev_2_adr_entry.insert(0, "1")
         #######################################################################################################################
 
-        self.label = ttk.Label(self.labelframe01, text='Wykres 03 - adres modbus')
+        self.label = ttk.Label(self.labelframe01, text='Zapis/Wykres 03 - adres modbus')
         self.label.grid(row=15, column=2)
 
         self.mod_3_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_3_adr_var)
@@ -123,7 +139,7 @@ class View(ttk.Frame):
         self.dev_3_adr_entry.insert(0, "1")
 
         #######################################################################################################################
-        self.label = ttk.Label(self.labelframe01, text='Wykres 04 - adres modbus')
+        self.label = ttk.Label(self.labelframe01, text='Zapis/Wykres 04 - adres modbus')
         self.label.grid(row=20, column=2)
 
         self.mod_4_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_4_adr_var)
@@ -143,13 +159,52 @@ class View(ttk.Frame):
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=21, column=0)
 
-        self.draw_window_button = ttk.Button(self.labelframe01, text= "wykresy",width=5, command= self.draw_chart)
-        self.draw_window_button.grid(columnspan=7,sticky = tk.W+tk.E)
-
         self.dev_4_adr_entry.insert(0, "1")
 
 
+
         ###########################################################################################################################
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 05 - adres modbus')
+        self.label.grid(row=30, column=2)
+
+        self.mod_5_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_5_adr_var)
+        self.mod_5_adr_entry.grid(row=30, column=3)
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=30, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=30, column=5)
+
+        self.mod_5_adr_entry.insert(0, "70")
+
+        self.dev_5_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_5_adr_var)
+        self.dev_5_adr_entry.grid(row=30, column=6)
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=31, column=0)
+
+        ###########################################################################################################################
+
+        self.draw_window_button = ttk.Button(self.labelframe01, text="wykresy", width=5, command=self.draw_chart)
+        self.draw_window_button.grid(columnspan=7, sticky=tk.W + tk.E)
+
+
+
+
+        self.dev_5_adr_entry.insert(0, "1")
+
+        ###########################################################################################################################
+
+
+
+
+
+
+
+
+
         self.dist = ttk.Label(tab0, width=5)
         self.dist.grid(row=1, column=0)
 
