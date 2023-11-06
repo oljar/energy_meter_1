@@ -49,6 +49,17 @@ class Controller:
         self.ax4 = plt.subplot(224)     ### set window position
         self.ax4_co = self.ax.twiny()
 
+        self.ax5 = plt.subplot(224)  ### set window position
+        self.ax5_co = self.ax.twiny()
+
+        self.ax6 = plt.subplot(224)  ### set window position
+        self.ax6_co = self.ax.twiny()
+
+
+
+
+
+
 
 
 
@@ -84,18 +95,38 @@ class Controller:
             self.param_4.append(self.instrument.read_float(int(self.model.mod_4_adr_var.get()), functioncode=4))  # adress modbus
             self.param_4.popleft()
         chart4_myfunction()
+##########################################################################################################################################
+        def chart5_myfunction():
+            self.instrument.address = int(self.model.dev_1_adr_var.get())
+            self.param_1.append(
+                self.instrument.read_float(int(self.model.mod_1_adr_var.get()), functioncode=4))  # adress modbus
+            self.param_1.popleft()
 
+        chart5_myfunction()
 
+        def chart6_myfunction():
+            self.instrument.address = int(self.model.dev_2_adr_var.get())
+            self.param_2.append(
+                self.instrument.read_float(int(self.model.mod_2_adr_var.get()), functioncode=4))  # adress modbus
+            self.param_2.popleft()
 
+        chart6_myfunction()
 
+        def chart7_myfunction():
+            self.instrument.address = int(self.model.dev_3_adr_var.get())
+            self.param_3.append(
+                self.instrument.read_float(int(self.model.mod_3_adr_var.get()), functioncode=4))  # adress modbus
+            self.param_3.popleft()
 
+        chart7_myfunction()
 
+        def chart8_myfunction():
+            self.instrument.address = int(self.model.dev_4_adr_var.get())
+            self.param_4.append(
+                self.instrument.read_float(int(self.model.mod_4_adr_var.get()), functioncode=4))  # adress modbus
+            self.param_4.popleft()
 
-
-
-
-
-
+        chart8_myfunction()
 
 
 
@@ -153,9 +184,45 @@ class Controller:
             self.ax4.set_xlim(right=int(self.delta_t) - 10, left=int(self.delta_t) + 1)
         chart4_animate(i)
 
+        def chart5_animate(i):
+            self.ax5.clear()
+            self.ax5.plot(self.time_s, self.param_1)
+            self.ax5.scatter(self.time_s[-1], self.param_1[-1])
+            self.ax5.text(self.time_s[-1], self.param_1[-1], f"{self.param_1[-1]}")
+            self.ax5.set_ylim(-1, self.param_1[-1] + 0.1 * self.param_1[-1] + 3)
+            self.ax5_co.set_xlim(0, 10)
+            self.ax5.set_xlim(right=int(self.delta_t) - 10, left=int(self.delta_t) + 1)
+        chart5_animate(i)
 
+        def chart6_animate(i):
+            self.ax6.clear()
+            self.ax6.plot(self.time_s, self.param_2)
+            self.ax6.scatter(self.time_s[-1], self.param_2[-1])
+            self.ax6.text(self.time_s[-1], self.param_2[-1], f"{self.param_2[-1]}")
+            self.ax6.set_ylim(-1, self.param_2[-1] + 0.1 * self.param_2[-1] + 3)
+            self.ax6_co.set_xlim(0, 10)
+            self.ax6.set_xlim(right=int(self.delta_t) - 10, left=int(self.delta_t) + 1)
+        chart6_animate(i)
 
+        def chart7_animate(i):
+            self.ax7.clear()
+            self.ax7.plot(self.time_s, self.param_3)
+            self.ax7.scatter(self.time_s[-1], self.param_3[-1])
+            self.ax7.text(self.time_s[-1], self.param_3[-1], f"{self.param_3[-1]}")
+            self.ax7.set_ylim(-1, self.param_3[-1] + 0.1 * self.param_3[-1] + 3)
+            self.ax7_co.set_xlim(0, 10)
+            self.ax7.set_xlim(right=int(self.delta_t) - 10, left=int(self.delta_t) + 1)
+        chart7_animate(i)
 
+        def chart8_animate(i):
+            self.ax8.clear()
+            self.ax8.plot(self.time_s, self.param_4)
+            self.ax8.scatter(self.time_s[-1], self.param_4[-1])
+            self.ax8.text(self.time_s[-1], self.param_4[-1], f"{self.param_4[-1]}")
+            self.ax8.set_ylim(-1, self.param_4[-1] + 0.1 * self.param_4[-1] + 3)
+            self.ax8_co.set_xlim(0, 10)
+            self.ax8.set_xlim(right=int(self.delta_t) - 10, left=int(self.delta_t) + 1)
+        chart8_animate(i)
 
     def make(self):
 
