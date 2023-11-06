@@ -5,40 +5,47 @@ from Controller import Controller
 from Model import Model
 from View import View
 import View as V
-
-
+import threading
 
 
 class Application(tk.Frame):
-        def __init__(self, master):
-            super(Application, self).__init__(master)
+    def __init__(self, master):
+        super(Application, self).__init__(master)
+
+        # create a model
+mod_1_adr_var = tk.StringVar()
+dev_1_adr_var = tk.StringVar()
+mod_2_adr_var = tk.StringVar()
+dev_2_adr_var = tk.StringVar()
+mod_3_adr_var = tk.StringVar()
+dev_3_adr_var = tk.StringVar()
+mod_4_adr_var = tk.StringVar()
+dev_4_adr_var = tk.StringVar()
 
 
-                # create a model
-model = Model('')
-
+model = Model(mod_1_adr_var,dev_1_adr_var,mod_2_adr_var,dev_2_adr_var,mod_3_adr_var,dev_3_adr_var,mod_4_adr_var,dev_4_adr_var)
 
 view = View(V.window)
 
-
 controller = Controller(model, view)
-controller.settings()
-controller.execut()
-
-# set the controller to view
 view.set_controller(controller)
 
+V.tab_parent.add(V.tab0, text='settings')
+V.tab_parent.add(V.tab1, text='identification')
 
+V.tab_parent.pack(expand=1, fill='both')
 
-V.tab_parent.add(V.tab0,text = 'settings')
-V.tab_parent.add(V.tab1,text = 'identification')
+app = Application(V.window)
 
-V.tab_parent.pack(expand = 1, fill = 'both')
-
-app =Application(V.window)
-
-
-
-#check
-
+# check
+#controller.settings()
+#controller.make()
 V.window.mainloop()
+
+
+
+
+
+
+# set the controller to view
+

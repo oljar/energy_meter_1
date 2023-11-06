@@ -5,7 +5,7 @@ from time import sleep
 
 import serial
 
-instrument = minimalmodbus.Instrument('/dev/ttyUSB0', 1)
+instrument = minimalmodbus.Instrument('com5', 1)
 
 instrument.serial.baudrate = 9600       # Baud
 instrument.serial.bytesize = 8
