@@ -82,11 +82,12 @@ class View(ttk.Frame):
 
         self.dev_1_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_1_adr_var)
         self.dev_1_adr_entry.grid(row=6,column=6)
+        self.dev_1_adr_entry.insert(0, "1")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=7, column=0)
 
-        self.dev_1_adr_entry.insert(0, "1")
+
 
 
 
@@ -98,22 +99,22 @@ class View(ttk.Frame):
         self.mod_2_adr_entry = ttk.Entry(self.labelframe01, textvariable = self.mod_2_adr_var)
         self.mod_2_adr_entry.grid(row=10, column=3)
 
-        self.dist = ttk.Label(self.labelframe01, width=5)
-        self.dist.grid(row=10, column=4)
-
         self.mod_2_adr_entry.insert(0, "6")
 
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=10, column=4)
 
         self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
         self.label.grid(row=10, column=5)
 
         self.dev_2_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_2_adr_var)
         self.dev_2_adr_entry.grid(row=10,column=6)
+        self.dev_2_adr_entry.insert(0, "1")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=11, column=0)
 
-        self.dev_2_adr_entry.insert(0, "1")
+
         #######################################################################################################################
 
         self.label = ttk.Label(self.labelframe01, text='Zapis/Wykres 03 - adres modbus')
@@ -121,22 +122,22 @@ class View(ttk.Frame):
 
         self.mod_3_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_3_adr_var)
         self.mod_3_adr_entry.grid(row=15, column=3)
+        self.mod_3_adr_entry.insert(0, "12")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=15, column=4)
-
-        self.mod_3_adr_entry.insert(0, "12")
 
         self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
         self.label.grid(row=15, column=5)
 
         self.dev_3_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_3_adr_var)
         self.dev_3_adr_entry.grid(row=15, column=6)
+        self.dev_3_adr_entry.insert(0, "1")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=16, column=0)
 
-        self.dev_3_adr_entry.insert(0, "1")
+
 
         #######################################################################################################################
         self.label = ttk.Label(self.labelframe01, text='Zapis/Wykres 04 - adres modbus')
@@ -145,21 +146,22 @@ class View(ttk.Frame):
         self.mod_4_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_4_adr_var)
         self.mod_4_adr_entry.grid(row=20, column=3)
 
+        self.mod_4_adr_entry.insert(0, "70")
+
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=20, column=4)
 
         self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
         self.label.grid(row=20, column=5)
 
-        self.mod_4_adr_entry.insert(0, "70")
-
         self.dev_4_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_4_adr_var)
         self.dev_4_adr_entry.grid(row=20, column=6)
+        self.dev_4_adr_entry.insert(0, "1")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=21, column=0)
 
-        self.dev_4_adr_entry.insert(0, "1")
+
 
 
 
@@ -170,6 +172,7 @@ class View(ttk.Frame):
 
         self.mod_5_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_5_adr_var)
         self.mod_5_adr_entry.grid(row=30, column=3)
+        self.mod_5_adr_entry.insert(0, "70")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=30, column=4)
@@ -177,10 +180,132 @@ class View(ttk.Frame):
         self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
         self.label.grid(row=30, column=5)
 
-        self.mod_5_adr_entry.insert(0, "70")
-
         self.dev_5_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_5_adr_var)
         self.dev_5_adr_entry.grid(row=30, column=6)
+        self.dev_5_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=31, column=0)
+        ########################################################################################################################
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 06 - adres modbus')
+        self.label.grid(row=40, column=2)
+
+        self.mod_6_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_6_adr_var)
+        self.mod_6_adr_entry.grid(row=40, column=3)
+        self.mod_6_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=40, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=40, column=5)
+
+        self.dev_6_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_6_adr_var)
+        self.dev_6_adr_entry.grid(row=40, column=6)
+        self.dev_6_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=41, column=0)
+
+        ############################################################################################################################
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 07 - adres modbus')
+        self.label.grid(row=50, column=2)
+
+        self.mod_7_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_7_adr_var)
+        self.mod_7_adr_entry.grid(row=50, column=3)
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=50, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=50, column=5)
+
+        self.mod_7_adr_entry.insert(0, "70")
+
+        self.dev_7_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_7_adr_var)
+        self.dev_7_adr_entry.grid(row=50, column=6)
+
+        self.dev_7_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=51, column=0)
+
+
+
+        ############################################################################################################################
+
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 08 - adres modbus')
+        self.label.grid(row=60, column=2)
+
+        self.mod_8_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_8_adr_var)
+        self.mod_8_adr_entry.grid(row=60, column=3)
+        self.mod_8_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=60, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=60, column=5)
+
+
+        self.dev_8_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_8_adr_var)
+        self.dev_8_adr_entry.grid(row=60, column=6)
+
+        self.dev_8_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=61, column=0)
+
+
+        ############################################################################################################################
+
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 09 - adres modbus')
+        self.label.grid(row=70, column=2)
+
+        self.mod_9_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_9_adr_var)
+        self.mod_9_adr_entry.grid(row=70, column=3)
+        self.mod_9_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=70, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=70, column=5)
+
+        self.dev_9_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_9_adr_var)
+        self.dev_9_adr_entry.grid(row=70, column=6)
+        self.dev_9_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=71, column=0)
+
+        ############################################################################################################################
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 10 - adres modbus')
+        self.label.grid(row=80, column=2)
+
+        self.mod_10_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_10_adr_var)
+        self.mod_10_adr_entry.grid(row=80, column=3)
+        self.mod_10_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=80, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=80, column=5)
+
+        self.dev_10_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_10_adr_var)
+        self.dev_10_adr_entry.grid(row=80, column=6)
+        self.dev_10_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=81, column=0)
+
+        ############################################################################################################################
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=31, column=0)
@@ -193,7 +318,7 @@ class View(ttk.Frame):
 
 
 
-        self.dev_5_adr_entry.insert(0, "1")
+
 
         ###########################################################################################################################
 

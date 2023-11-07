@@ -211,8 +211,36 @@ class Controller:
         self.model.mod_4_adr_var.set(self.view.mod_4_adr_var.get())
         self.model.dev_4_adr_var.set(self.view.dev_4_adr_var.get())
 
+        self.model.mod_5_adr_var.set(self.view.mod_5_adr_var.get())
+        self.model.dev_5_adr_var.set(self.view.dev_5_adr_var.get())
+
+        self.model.mod_6_adr_var.set(self.view.mod_6_adr_var.get())
+        self.model.dev_6_adr_var.set(self.view.dev_6_adr_var.get())
+
+        self.model.mod_7_adr_var.set(self.view.mod_7_adr_var.get())
+        self.model.dev_7_adr_var.set(self.view.dev_7_adr_var.get())
+
+        self.model.mod_8_adr_var.set(self.view.mod_8_adr_var.get())
+        self.model.dev_8_adr_var.set(self.view.dev_8_adr_var.get())
+
+        self.model.mod_9_adr_var.set(self.view.mod_9_adr_var.get())
+        self.model.dev_9_adr_var.set(self.view.dev_9_adr_var.get())
+
+        self.model.mod_10_adr_var.set(self.view.mod_10_adr_var.get())
+        self.model.dev_10_adr_var.set(self.view.dev_10_adr_var.get())
 
 
         print(self.model.mod_1_adr_var.get())
-        self.settings()
-        self.make()
+        print(self.view.mod_2_adr_var.get())
+        print(self.view.mod_3_adr_var.get())
+        print(self.view.mod_4_adr_var.get())
+        print(self.view.mod_5_adr_var.get())
+        print(self.view.mod_6_adr_var.get())
+        print(self.view.mod_7_adr_var.get())
+        print(self.view.mod_8_adr_var.get())
+        print(self.view.mod_9_adr_var.get())
+        print(self.view.mod_10_adr_var.get())
+
+
+        # self.settings()
+        # self.make()

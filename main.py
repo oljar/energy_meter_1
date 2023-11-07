@@ -21,9 +21,22 @@ mod_3_adr_var = tk.StringVar()
 dev_3_adr_var = tk.StringVar()
 mod_4_adr_var = tk.StringVar()
 dev_4_adr_var = tk.StringVar()
+mod_5_adr_var = tk.StringVar()
+dev_5_adr_var = tk.StringVar()
+mod_6_adr_var = tk.StringVar()
+dev_6_adr_var = tk.StringVar()
+mod_7_adr_var = tk.StringVar()
+dev_7_adr_var = tk.StringVar()
+mod_8_adr_var = tk.StringVar()
+dev_8_adr_var = tk.StringVar()
+mod_9_adr_var = tk.StringVar()
+dev_9_adr_var = tk.StringVar()
+mod_10_adr_var = tk.StringVar()
+dev_10_adr_var = tk.StringVar()
 
-
-model = Model(mod_1_adr_var,dev_1_adr_var,mod_2_adr_var,dev_2_adr_var,mod_3_adr_var,dev_3_adr_var,mod_4_adr_var,dev_4_adr_var)
+model = Model(mod_1_adr_var, dev_1_adr_var, mod_2_adr_var, dev_2_adr_var, mod_3_adr_var, dev_3_adr_var, mod_4_adr_var
+              , dev_4_adr_var, mod_5_adr_var, dev_5_adr_var, mod_6_adr_var, dev_6_adr_var, mod_7_adr_var, dev_7_adr_var,
+              mod_8_adr_var, dev_8_adr_var, mod_9_adr_var, dev_9_adr_var, mod_10_adr_var, dev_10_adr_var)
 
 view = View(V.window)
 
