@@ -5,18 +5,28 @@ from time import sleep
 
 import serial
 
-instrument = minimalmodbus.Instrument('com5', 1)
+instrument = minimalmodbus.Instrument('com6', 1)
 
-instrument.serial.baudrate = 9600       # Baud
+instrument.serial.baudrate = 19200       # Baud
 instrument.serial.bytesize = 8
-instrument.serial.parity   = serial.PARITY_NONE
+instrument.serial.parity   = serial.PARITY_EVEN
 instrument.serial.stopbits = 1
 instrument.serial.timeout  = 0.05          # seconds
 
 instrument.address = 1                   # this is the slave address number
 instrument.mode = minimalmodbus.MODE_RTU   # rtu or ascii mode
 instrument.clear_buffers_before_each_transaction = True
+instrument.clear_buffers_before_each_transaction = True
 
+# self.instrument = minimalmodbus.Instrument('com6', 1)
+# self.instrument.serial.baudrate = 19200  # Baud
+# self.instrument.serial.bytesize = 8
+# self.instrument.serial.parity = serial.PARITY_EVEN
+# self.instrument.serial.stopbits = 1
+# self.instrument.serial.timeout = 0.05  # seconds
+# self.instrument.address = 1  # this is the slave address number
+# self.instrument.mode = minimalmodbus.MODE_RTU  # rtu or ascii mode
+# self.instrument.clear_buffers_before_each_transaction = True
 
 
 
@@ -29,8 +39,12 @@ logging.basicConfig()
 # sched.start()
 # 0, functioncode=4, numberOfRegisters=2)
 def read_meter():
-    # TEC = round(wattson.read_float(768), 3)  # total energy consumed KWh
-    TEC = instrument.read_float(0,4)  # total energy consumed KWh
+    #TEC = round(wattson.read_float(768), 3)  # total energy consumed KWh
+    TEC = instrument.read_float(53248,4)  # total energy consumed KWh
+    #TEC = instrument.write_register(53505,1,1,6)  # total energy consumed KWh
+
+
+
     print(TEC)
 
     # CONS = int(wattson.read_float(770) * 1000)  # total real power Watts
