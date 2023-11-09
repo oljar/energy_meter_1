@@ -19,6 +19,7 @@ from threading import Thread
 class Controller:
     def __init__(self, model, view):
 
+        self.writer = None
         self.parameter = tk.StringVar()
         self.model = model
         self.view = view
@@ -232,29 +233,26 @@ class Controller:
         self.model.data_10.set(self.instrument.read_float(int(self.model.mod_10_adr_var.get()), functioncode=4))
 
     def start_save(self):
-            t2s = time.time()
-            print('start')
-            csvfile = open('dane.csv', 'w', newline='')
-            writer = csv.writer(csvfile,  delimiter =';' )
-
-            while self.model.save_control.get() :
-                print(self.model.save_control.get())
-                t1s = time.time()
-                self.cycle_data()
-                t = str(t1s - t2s)
-                t.replace('.',',')
+        self.t2s = time.time()
+        print('start')
 
 
-                data = [[t, self.model.data_1.get(), self.model.data_2.get(), self.model.data_3.get(),
-                        self.model.data_4.get(),self.model.data_5.get(), self.model.data_6.get(), self.model.data_7.get(),
-                        self.model.data_8.get(),self.model.data_9.get(), self.model.data_10.get()]]
 
 
-                writer.writerows(data)
-                print (self.model.save_control)
-            print ('zakończono pętlę')
+    def save_data(self):
+        self.t1s = time.time()
+        self.cycle_data()
+        t = str(self.t1s - self.t2s)
+        self.data = [[t, self.model.data_1.get(), self.model.data_2.get(), self.model.data_3.get(),
+                 self.model.data_4.get(), self.model.data_5.get(), self.model.data_6.get(), self.model.data_7.get(),
+                 self.model.data_8.get(), self.model.data_9.get(), self.model.data_10.get()]]
 
 
+        with open('data.csv', mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(self.data)
+
+        print (self.data)
 
 
     def set_save_control(self):

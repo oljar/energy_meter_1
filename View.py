@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from Controller import Controller
 from Model import Model
-
+import time
 window = tk.Tk()
 
 window.title("EVOT_printer")
@@ -12,7 +12,7 @@ window.geometry('670x550')
 tab_parent = ttk.Notebook(window)
 tab0 = ttk.Frame(tab_parent)
 tab1 = ttk.Frame(tab_parent)
-import threading
+
 
 
 class View(ttk.Frame):
@@ -54,7 +54,10 @@ class View(ttk.Frame):
 
         self.labelframe01 = tk.LabelFrame(tab0, text="")
         self.labelframe01.grid(row=1, column=1, sticky=tk.NSEW)
-        self.stop_button()
+
+        self.stop_check = tk.BooleanVar()
+
+
 
         #######################################################################################################################
 
@@ -300,7 +303,6 @@ class View(ttk.Frame):
 
         ##########################################################################################################################
 
-    def stop_button(self):
 
         self.stop_save_button = ttk.Button(self.labelframe01, text="stop - zapis", width=2, command=self.stop_save)
         self.stop_save_button.grid(row=91, column=5, ipadx=50)
@@ -316,21 +318,34 @@ class View(ttk.Frame):
         self.controller.transfer_data()
         self.controller.make()
 
+
     def start_save(self):
+        self.stop_check.set(False)
         self.controller.settings()
         self.controller.transfer_data()
-
-
+        #
         self.controller.start_save()
-        self.thread1.start()
-        self.thread1.join()
+        self.start_loop()
+
+
+
+
+    def start_loop(self):
+        time.sleep(0.1)
+        self.controller.save_data()
+        if self.stop_check.get() :
+            return
+        self.labelframe01.after(1000, self.start_loop)
+
+
+
 
         # self.start_save_button.config(state= "disabled")
         # self.stop_save_button.config(state = "enabled")
 
     def stop_save(self):
-        self.controller.transfer_data()
-        self.controller.set_save_control()
+
+        self.stop_check.set(True)
 
         # self.start_save_button.config(state="enabled")
         # self.stop_save_button.config(state="disabled")
