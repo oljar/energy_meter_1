@@ -39,16 +39,16 @@ t = tk.StringVar()
 delta_t = tk.StringVar()
 save_control = tk.BooleanVar()
 
-data_1 = tk.StringVar()
-data_2 = tk.StringVar()
-data_3 = tk.StringVar()
-data_4 = tk.StringVar()
-data_5 = tk.StringVar()
-data_6 = tk.StringVar()
-data_7 = tk.StringVar()
-data_8 = tk.StringVar()
-data_9 = tk.StringVar()
-data_10 = tk.StringVar()
+data_1 = None
+data_2 = None
+data_3 = None
+data_4 = None
+data_5 = None
+data_6 = None
+data_7 = None
+data_8 = None
+data_9 = None
+data_10 = None
 
 model = Model(save_control,t, delta_t, mod_1_adr_var, dev_1_adr_var, mod_2_adr_var, dev_2_adr_var, mod_3_adr_var, dev_3_adr_var,
               mod_4_adr_var, dev_4_adr_var, mod_5_adr_var, dev_5_adr_var, mod_6_adr_var, dev_6_adr_var, mod_7_adr_var,

@@ -46,7 +46,7 @@ class Controller:
         self.ax4 = plt.subplot(224)  ### set window position
         self.ax4_co = self.ax.twiny()
 
-        self.a = None
+
         self.model.save_control.set(True)
 
 
@@ -221,16 +221,16 @@ class Controller:
         self.model.dev_10_adr_var.set(self.view.dev_10_adr_var.get())
 
     def cycle_data(self):
-        self.model.data_1.set(self.instrument.read_float(int(self.model.mod_1_adr_var.get()), functioncode=4))
-        self.model.data_2.set(self.instrument.read_float(int(self.model.mod_2_adr_var.get()), functioncode=4))
-        self.model.data_3.set(self.instrument.read_float(int(self.model.mod_3_adr_var.get()), functioncode=4))
-        self.model.data_4.set(self.instrument.read_float(int(self.model.mod_4_adr_var.get()), functioncode=4))
-        self.model.data_5.set(self.instrument.read_float(int(self.model.mod_5_adr_var.get()), functioncode=4))
-        self.model.data_6.set(self.instrument.read_float(int(self.model.mod_6_adr_var.get()), functioncode=4))
-        self.model.data_7.set(self.instrument.read_float(int(self.model.mod_7_adr_var.get()), functioncode=4))
-        self.model.data_8.set(self.instrument.read_float(int(self.model.mod_8_adr_var.get()), functioncode=4))
-        self.model.data_9.set(self.instrument.read_float(int(self.model.mod_9_adr_var.get()), functioncode=4))
-        self.model.data_10.set(self.instrument.read_float(int(self.model.mod_10_adr_var.get()), functioncode=4))
+        self.model.data_1 = (self.instrument.read_float(int(self.model.mod_1_adr_var.get()), functioncode=4))
+        self.model.data_2 = (self.instrument.read_float(int(self.model.mod_2_adr_var.get()), functioncode=4))
+        self.model.data_3 = (self.instrument.read_float(int(self.model.mod_3_adr_var.get()), functioncode=4))
+        self.model.data_4 = (self.instrument.read_float(int(self.model.mod_4_adr_var.get()), functioncode=4))
+        self.model.data_5 = (self.instrument.read_float(int(self.model.mod_5_adr_var.get()), functioncode=4))
+        self.model.data_6 = (self.instrument.read_float(int(self.model.mod_6_adr_var.get()), functioncode=4))
+        self.model.data_7 = (self.instrument.read_float(int(self.model.mod_7_adr_var.get()), functioncode=4))
+        self.model.data_8 = (self.instrument.read_float(int(self.model.mod_8_adr_var.get()), functioncode=4))
+        self.model.data_9 = (self.instrument.read_float(int(self.model.mod_9_adr_var.get()), functioncode=4))
+        self.model.data_10 = (self.instrument.read_float(int(self.model.mod_10_adr_var.get()), functioncode=4))
 
     def start_save(self):
         self.t2s = time.time()
@@ -239,13 +239,14 @@ class Controller:
 
 
 
+
     def save_data(self):
         self.t1s = time.time()
         self.cycle_data()
         t = str(self.t1s - self.t2s)
-        self.data = [[t, self.model.data_1.get(), self.model.data_2.get(), self.model.data_3.get(),
-                 self.model.data_4.get(), self.model.data_5.get(), self.model.data_6.get(), self.model.data_7.get(),
-                 self.model.data_8.get(), self.model.data_9.get(), self.model.data_10.get()]]
+        self.data = [[t, self.model.data_1, self.model.data_2, self.model.data_3,
+                 self.model.data_4, self.model.data_5, self.model.data_6, self.model.data_7,
+                 self.model.data_8, self.model.data_9, self.model.data_10]]
 
 
         with open('data.csv', mode='a', newline='') as file:
