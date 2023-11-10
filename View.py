@@ -319,12 +319,12 @@ class View(ttk.Frame):
 
 
 
-        self.stop_save_button = ttk.Button(self.labelframe01, text="cfg", width=2, command=self.stop_save)
-        self.stop_save_button.grid(row=95, column=3, ipadx=50)
+        self.cfg_button = ttk.Button(self.labelframe01, text="cfg", width=2, command=self.stop_save)
+        self.cfg_button.grid(row=95, column=3, ipadx=50)
 
 ########################################################################################################################
-        self.stop_save_button = ttk.Button(self.labelframe01, text="wybierz plik", width=2, command=self.choose_file)
-        self.stop_save_button.grid(row=95, column=5, ipadx=50)
+        self.change_file_button = ttk.Button(self.labelframe01, text="wybierz plik", width=2, command=self.choose_file)
+        self.change_file_button.grid(row=95, column=5, ipadx=50)
 
 #######################################################################################################################
 
@@ -354,8 +354,8 @@ class View(ttk.Frame):
         #
         self.controller.start_save()
         self.start_loop()
-
-
+        self.start_save_button.config(state="disabled")
+        self.stop_save_button.config(state="enabled")
 
 
     def start_loop(self):
@@ -368,12 +368,15 @@ class View(ttk.Frame):
 
 
 
+
         # self.start_save_button.config(state= "disabled")
         # self.stop_save_button.config(state = "enabled")
 
     def stop_save(self):
 
         self.stop_check.set(True)
+        self.stop_save_button.config(state="disabled")
+        self.start_save_button.config(state="enabled")
 
         # self.start_save_button.config(state="enabled")
         # self.stop_save_button.config(state="disabled")
