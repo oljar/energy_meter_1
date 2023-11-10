@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from Controller import Controller
 from Model import Model
+
 import time
 window = tk.Tk()
 
@@ -12,12 +13,16 @@ window.geometry('670x550')
 tab_parent = ttk.Notebook(window)
 tab0 = ttk.Frame(tab_parent)
 tab1 = ttk.Frame(tab_parent)
+from tkinter.filedialog import asksaveasfile
 
 
 
 class View(ttk.Frame):
     def __init__(self, parent):
+
         super().__init__(parent)
+
+        self.file_name = None
 
         self.dev_1_adr_var = tk.StringVar()
         self.mod_1_adr_var = tk.StringVar()
@@ -296,22 +301,45 @@ class View(ttk.Frame):
         self.draw_window_button = ttk.Button(self.labelframe01, text="wykresy", width=5, command=self.draw_chart)
         self.draw_window_button.grid(row=90, columnspan=7, sticky=tk.W + tk.E)
 
-        ###########################################################################################################################
+
+        ################################################################################################################
 
         self.start_save_button = ttk.Button(self.labelframe01, text="start -zapis", width=2, command=self.start_save)
-        self.start_save_button.grid(row=91, column=3, ipadx=50)
+        self.start_save_button.grid(row=100, column=3, ipadx=50)
+
+
+        ######################################################################################################################
+
+
+
+        self.stop_save_button = ttk.Button(self.labelframe01, text="stop - zapis", width=2, command=self.stop_save)
+        self.stop_save_button.grid(row=100, column=5, ipadx=50)
 
         ##########################################################################################################################
 
 
-        self.stop_save_button = ttk.Button(self.labelframe01, text="stop - zapis", width=2, command=self.stop_save)
-        self.stop_save_button.grid(row=91, column=5, ipadx=50)
 
-        self.dist = ttk.Label(tab0, width=5)
-        self.dist.grid(row=1, column=0)
+        self.stop_save_button = ttk.Button(self.labelframe01, text="cfg", width=2, command=self.stop_save)
+        self.stop_save_button.grid(row=95, column=3, ipadx=50)
 
-        self.labelframe01 = tk.LabelFrame(tab0, text="wykres-2")
-        self.labelframe01.grid(row=2, column=1, sticky=tk.NSEW)
+########################################################################################################################
+        self.stop_save_button = ttk.Button(self.labelframe01, text="wybierz plik", width=2, command=self.choose_file)
+        self.stop_save_button.grid(row=95, column=5, ipadx=50)
+
+#######################################################################################################################
+
+
+
+
+
+    def choose_file(self):
+        self.file_name = asksaveasfile(initialdir='C:\\Users\oljar\PycharmProjects\jupiter02', defaultextension='*.csv',
+                               mode='w', filetypes=[('CSV Files', '*.csv')])
+
+        print(self.file_name.name)
+
+
+
 
     def draw_chart(self):
         self.controller.settings()
