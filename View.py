@@ -461,8 +461,8 @@ class View(ttk.Frame):
 
         ##########################################################################################################################
         ########################################################################################################################
-        self.labelframe01 = tk.LabelFrame(tab0, text="")
-        self.labelframe01.grid(row=1, column=1, sticky=tk.NSEW)
+        # self.labelframe01 = tk.LabelFrame(tab0, text="")
+        # self.labelframe01.grid(row=1, column=1, sticky=tk.NSEW)
 
 
 

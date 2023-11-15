@@ -179,7 +179,7 @@ class Controller:
         plt.show()
 
     def settings_1(self):
-        self.instrument = minimalmodbus.Instrument("/dev/ttyUSB0", 1)
+        self.instrument_1 = minimalmodbus.Instrument("/dev/ttyUSB0", 1)
         #self.instrument_1 = minimalmodbus.Instrument('com6', 1)
         self.instrument_1.serial.baudrate = 9600  # Baud
         self.instrument_1.serial.bytesize = 8
@@ -192,7 +192,7 @@ class Controller:
         # self.instrument_1.close_port_after_each_call=True
 
     def settings_2(self):
-        self.instrument = minimalmodbus.Instrument("/dev/ttyUSB0", 1)
+        self.instrument_2 = minimalmodbus.Instrument("/dev/ttyUSB0", 2)
         #self.instrument_2 = minimalmodbus.Instrument('com6', 2)
         self.instrument_2.serial.baudrate = 9600  # Baud
         self.instrument_2.serial.bytesize = 8
