@@ -8,7 +8,7 @@ import time
 window = tk.Tk()
 
 window.title("EVOT_printer")
-window.geometry('670x550')
+window.geometry('670x760')
 
 tab_parent = ttk.Notebook(window)
 tab0 = ttk.Frame(tab_parent)
@@ -54,6 +54,23 @@ class View(ttk.Frame):
         self.dev_10_adr_var = tk.StringVar()
         self.mod_10_adr_var = tk.StringVar()
 
+        self.dev_11_adr_var = tk.StringVar()
+        self.mod_11_adr_var = tk.StringVar()
+
+        self.dev_12_adr_var = tk.StringVar()
+        self.mod_12_adr_var = tk.StringVar()
+
+        self.dev_13_adr_var = tk.StringVar()
+        self.mod_13_adr_var = tk.StringVar()
+
+        self.dev_14_adr_var = tk.StringVar()
+        self.mod_14_adr_var = tk.StringVar()
+
+        self.dev_15_adr_var = tk.StringVar()
+        self.mod_15_adr_var = tk.StringVar()
+
+
+
         self.dist = ttk.Label(tab0, width=5)
         self.dist.grid(row=0, column=0)
 
@@ -98,7 +115,7 @@ class View(ttk.Frame):
         self.mod_2_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_2_adr_var)
         self.mod_2_adr_entry.grid(row=10, column=3)
 
-        self.mod_2_adr_entry.insert(0, "6")
+        self.mod_2_adr_entry.insert(0, "2")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=10, column=4)
@@ -120,7 +137,7 @@ class View(ttk.Frame):
 
         self.mod_3_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_3_adr_var)
         self.mod_3_adr_entry.grid(row=15, column=3)
-        self.mod_3_adr_entry.insert(0, "12")
+        self.mod_3_adr_entry.insert(0, "4")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=15, column=4)
@@ -293,19 +310,146 @@ class View(ttk.Frame):
 
         ############################################################################################################################
 
+        self.label = ttk.Label(self.labelframe01, text='Zapis 11 - adres modbus')
+        self.label.grid(row=90, column=2)
+
+        self.mod_11_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_11_adr_var)
+        self.mod_11_adr_entry.grid(row=90, column=3)
+        self.mod_11_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=90, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=90, column=5)
+
+        self.dev_11_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_11_adr_var)
+        self.dev_11_adr_entry.grid(row=90, column=6)
+        self.dev_11_adr_entry.insert(0, "1")
+
         self.dist = ttk.Label(self.labelframe01)
-        self.dist.grid(row=31, column=0)
+        self.dist.grid(row=91, column=0)
+
+
+
+        ###########################################################################################################################
+
+
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 12 - adres modbus')
+        self.label.grid(row=100, column=2)
+
+        self.mod_12_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_12_adr_var)
+        self.mod_12_adr_entry.grid(row=100, column=3)
+        self.mod_12_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=100, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=100, column=5)
+
+        self.dev_12_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_12_adr_var)
+        self.dev_12_adr_entry.grid(row=100, column=6)
+        self.dev_12_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=101, column=0)
+
+
+
+
+
+
+
+
+        ###########################################################################################################################
+
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 13 - adres modbus')
+        self.label.grid(row=120, column=2)
+
+        self.mod_13_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_13_adr_var)
+        self.mod_13_adr_entry.grid(row=120, column=3)
+        self.mod_13_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=120, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=120, column=5)
+
+        self.dev_13_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_13_adr_var)
+        self.dev_13_adr_entry.grid(row=120, column=6)
+        self.dev_13_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=121, column=0)
+
+
+        ###########################################################################################################################
+
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 14 - adres modbus')
+        self.label.grid(row=130, column=2)
+
+        self.mod_14_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_14_adr_var)
+        self.mod_14_adr_entry.grid(row=130, column=3)
+        self.mod_14_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=130, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=130, column=5)
+
+        self.dev_14_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_14_adr_var)
+        self.dev_14_adr_entry.grid(row=130, column=6)
+        self.dev_14_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=131, column=0)
+
+        ###########################################################################################################################
+
+        self.label = ttk.Label(self.labelframe01, text='Zapis 15 - adres modbus')
+        self.label.grid(row=140, column=2)
+
+        self.mod_15_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_15_adr_var)
+        self.mod_15_adr_entry.grid(row=140, column=3)
+        self.mod_15_adr_entry.insert(0, "70")
+
+        self.dist = ttk.Label(self.labelframe01, width=5)
+        self.dist.grid(row=140, column=4)
+
+        self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
+        self.label.grid(row=140, column=5)
+
+        self.dev_15_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_15_adr_var)
+        self.dev_15_adr_entry.grid(row=140, column=6)
+        self.dev_15_adr_entry.insert(0, "1")
+
+        self.dist = ttk.Label(self.labelframe01)
+        self.dist.grid(row=141, column=0)
+
 
         ###########################################################################################################################
 
         self.draw_window_button = ttk.Button(self.labelframe01, text="wykresy", width=5, command=self.draw_chart)
-        self.draw_window_button.grid(row=90, columnspan=7, sticky=tk.W + tk.E)
+        self.draw_window_button.grid(row=200, columnspan=7, sticky=tk.W + tk.E)
 
+        self.cfg_button = ttk.Button(self.labelframe01, text="cfg", width=2, command=self.stop_save)
+        self.cfg_button.grid(row=205, column=3, ipadx=50)
 
-        ################################################################################################################
+        ########################################################################################################################
+        self.change_file_button = ttk.Button(self.labelframe01, text="wybierz plik", width=2, command=self.choose_file)
+        self.change_file_button.grid(row=205, column=5, ipadx=50)
+
+        #######################################################################################################################
+
 
         self.start_save_button = ttk.Button(self.labelframe01, text="start -zapis", width=2, command=self.start_save)
-        self.start_save_button.grid(row=100, column=3, ipadx=50)
+        self.start_save_button.grid(row=210, column=3, ipadx=50)
 
 
         ######################################################################################################################
@@ -313,21 +457,12 @@ class View(ttk.Frame):
 
 
         self.stop_save_button = ttk.Button(self.labelframe01, text="stop - zapis", width=2, command=self.stop_save)
-        self.stop_save_button.grid(row=100, column=5, ipadx=50)
+        self.stop_save_button.grid(row=210, column=5, ipadx=50)
 
         ##########################################################################################################################
-
-
-
-        self.cfg_button = ttk.Button(self.labelframe01, text="cfg", width=2, command=self.stop_save)
-        self.cfg_button.grid(row=95, column=3, ipadx=50)
-
-########################################################################################################################
-        self.change_file_button = ttk.Button(self.labelframe01, text="wybierz plik", width=2, command=self.choose_file)
-        self.change_file_button.grid(row=95, column=5, ipadx=50)
-
-#######################################################################################################################
-
+        ########################################################################################################################
+        self.labelframe01 = tk.LabelFrame(tab0, text="")
+        self.labelframe01.grid(row=1, column=1, sticky=tk.NSEW)
 
 
 
@@ -342,20 +477,24 @@ class View(ttk.Frame):
 
 
     def draw_chart(self):
-        self.controller.settings()
+        self.controller.settings_1()
+        self.controller.settings_2()
         self.controller.transfer_data()
         self.controller.make()
 
 
     def start_save(self):
         self.stop_check.set(False)
-        self.controller.settings()
+        self.controller.settings_1()
+        self.controller.settings_2()
+
         self.controller.transfer_data()
         #
         self.controller.start_save()
         self.start_loop()
         self.start_save_button.config(state="disabled")
         self.stop_save_button.config(state="enabled")
+        self.controller.save_data()
 
 
     def start_loop(self):
@@ -364,8 +503,6 @@ class View(ttk.Frame):
         if self.stop_check.get() :
             return
         self.labelframe01.after(1000, self.start_loop)
-
-
 
 
 
@@ -396,6 +533,25 @@ class View(ttk.Frame):
         """
         if self.controller:
             self.controller.save(self.email_var.get())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def show_error(self, message):
         """
