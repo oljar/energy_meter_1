@@ -55,6 +55,9 @@ t = tk.StringVar()
 delta_t = tk.StringVar()
 save_control = tk.BooleanVar()
 
+fan_signal = tk.StringVar()
+HE_signal = tk.StringVar()
+
 data_1 = None
 data_2 = None
 data_3 = None
@@ -70,8 +73,8 @@ data_12 = None
 data_13 = None
 data_14 = None
 data_15 = None
-
-model = Model(save_control,t, delta_t, mod_1_adr_var, dev_1_adr_var, mod_2_adr_var, dev_2_adr_var, mod_3_adr_var,
+aaa = None
+model = Model(fan_signal, HE_signal ,save_control,t , delta_t, mod_1_adr_var, dev_1_adr_var, mod_2_adr_var, dev_2_adr_var, mod_3_adr_var,
               dev_3_adr_var,mod_4_adr_var, dev_4_adr_var, mod_5_adr_var, dev_5_adr_var, mod_6_adr_var, dev_6_adr_var,
               mod_7_adr_var,dev_7_adr_var, mod_8_adr_var, dev_8_adr_var, mod_9_adr_var, dev_9_adr_var, mod_10_adr_var,
               dev_10_adr_var, mod_11_adr_var, dev_11_adr_var, mod_12_adr_var, dev_12_adr_var, mod_13_adr_var,

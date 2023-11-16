@@ -568,16 +568,16 @@ class View(ttk.Frame):
         # self.stop_save_button.config(state="disabled")
 
     def fan_start(self):
-        print('fan start')
+        self.controller.fan_start()
 
     def fan_stop(self):
-        print('fan stop')
+        self.controller.fan_stop()
 
     def HE_start(self):
-        print('HE start')
+        self.controller.HE_start()
 
     def HE_stop(self):
-        print('HE stop')
+        self.controller.HE_stop()
 
 
 

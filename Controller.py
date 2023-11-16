@@ -391,13 +391,21 @@ class Controller:
         print('start')
 
     def fan_start (self):
-        print ('fan start')
+
+        self.model.fan_signal.set(self.view.fan_signal.get())
+
+
+        print(self.model.fan_signal.get())
+
+
 
     def fan_stop(self):
         print ('fan stop')
 
     def HE_start(self):
-        print('HE start')
+
+        self.model.HE_signal.set(self.view.HE_signal.get())
+        print(self.model.HE_signal.get())
 
     def HE_stop(self):
         print('HE stop')
