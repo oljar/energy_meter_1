@@ -390,6 +390,18 @@ class Controller:
         self.t2s = time.time()
         print('start')
 
+    def fan_start (self):
+        print ('fan start')
+
+    def fan_stop(self):
+        print ('fan stop')
+
+    def HE_start(self):
+        print('HE start')
+
+    def HE_stop(self):
+        print('HE stop')
+
 
 
 

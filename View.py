@@ -12,7 +12,7 @@ window.geometry('670x760')
 
 tab_parent = ttk.Notebook(window)
 tab0 = ttk.Frame(tab_parent)
-tab1 = ttk.Frame(tab_parent)
+tab2 = ttk.Frame(tab_parent)
 from tkinter.filedialog import asksaveasfile
 
 
@@ -78,6 +78,13 @@ class View(ttk.Frame):
         self.labelframe01.grid(row=1, column=1, sticky=tk.NSEW)
 
         self.stop_check = tk.BooleanVar()
+
+        self.rpm = tk.StringVar()
+
+        self.HE_signal = tk.StringVar()
+        self.fan_signal = tk.StringVar()
+
+        self.rpm.set('10')
 
 
 
@@ -461,10 +468,52 @@ class View(ttk.Frame):
 
         ##########################################################################################################################
         ########################################################################################################################
-        # self.labelframe01 = tk.LabelFrame(tab0, text="")
-        # self.labelframe01.grid(row=1, column=1, sticky=tk.NSEW)
 
 
+        self.labelframe02 = tk.LabelFrame(tab2, text="")
+        self.labelframe02.grid(row=1, column=1, sticky=tk.NSEW)
+
+
+        self.dist = ttk.Label(self.labelframe02, text ="0-10V")
+        self.dist.grid(row=10, column=15)
+
+        self.fan_start_button = ttk.Button(self.labelframe02, text="Wentylator - ON", width=10, command=self.fan_start)
+        self.fan_start_button.grid(row=20, column=5, ipadx=50)
+
+
+
+        self.fan_signal_entry = ttk.Entry(self.labelframe02, textvariable=self.fan_signal)
+        self.fan_signal_entry.grid(row=20, column=15)
+
+        self.dist = ttk.Label(self.labelframe02)
+        self.dist.grid(row=20, column=20)
+
+        self.fan_stop_button = ttk.Button(self.labelframe02, text="Wentylator - OFF", width=10, command=self.fan_stop)
+        self.fan_stop_button.grid(row=20, column=25, ipadx=50)
+
+
+
+        self.rpm_label = ttk.Label(self.labelframe02,text='rpm')
+        self.rpm_label.grid(row=25, column=10)
+
+        self.rpm_label = ttk.Label(self.labelframe02, text=self.rpm.get())
+        self.rpm_label.config(text=self.rpm.get())
+        self.rpm_label.grid(row=25, column=15)
+
+        self.dist = ttk.Label(self.labelframe02)
+        self.dist.grid(row=30, column=10)
+
+        self.he_start_button = ttk.Button(self.labelframe02, text="Nagrzewnica - ON", width=10, command=self.HE_start)
+        self.he_start_button.grid(row=40, column=5, ipadx=50)
+
+        self.he_signal_entry = ttk.Entry(self.labelframe02, textvariable=self.HE_signal)
+        self.he_signal_entry.grid(row=40, column=15)
+
+        self.he_stop_button = ttk.Button(self.labelframe02, text="Nagrzewnica - OFF", width=10, command=self.HE_stop)
+        self.he_stop_button.grid(row=40, column=25, ipadx=50)
+
+        self.dist = ttk.Label(self.labelframe02, text ="0-10V")
+        self.dist.grid(row=50, column=15)
 
 
     def choose_file(self):
@@ -517,6 +566,20 @@ class View(ttk.Frame):
 
         # self.start_save_button.config(state="enabled")
         # self.stop_save_button.config(state="disabled")
+
+    def fan_start(self):
+        print('fan start')
+
+    def fan_stop(self):
+        print('fan stop')
+
+    def HE_start(self):
+        print('HE start')
+
+    def HE_stop(self):
+        print('HE stop')
+
+
 
     def set_controller(self, controller):
         """

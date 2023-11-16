@@ -85,7 +85,7 @@ controller = Controller(model, view)
 view.set_controller(controller)
 
 V.tab_parent.add(V.tab0, text='settings')
-V.tab_parent.add(V.tab1, text='identification')
+V.tab_parent.add(V.tab2, text='identification')
 
 V.tab_parent.pack(expand=1, fill='both')
 
