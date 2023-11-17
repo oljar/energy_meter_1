@@ -257,6 +257,8 @@ class Controller:
                 try:
                     self.model.data_1 = (self.instrument_2.read_register(int(self.model.mod_1_adr_var), 0,
                                                                      functioncode=4)) / 256
+                    
+                   
                     print(f'Pobrano data_1 {i}')
                     break
                 except Exception:
@@ -378,13 +380,13 @@ class Controller:
                 except:
                     print(f'Błąd pobrania data_14 {i}')
 
-        for i in range(self.conn_repeat_nr):
-                try:
-                    self.model.data_15 = (self.instrument_1.read_float(int(self.model.mod_15_adr_var), functioncode=4))
-                    print(f'Pobrano data_15 {i}')
-                    break
-                except:
-                    print(f'Błąd pobrania data_15 {i}')
+     #   for i in range(self.conn_repeat_nr):
+     #           try:
+                    #self.model.data_15 = (self.instrument_1.read_float(int(self.model.mod_15_adr_var), functioncode=4))
+     #               print(f'Pobrano data_15 {i}')
+     #               break
+     #           except:
+     #               print(f'Błąd pobrania data_15 {i}')
 
     def start_save(self):
         self.t2s = time.time()
@@ -394,6 +396,16 @@ class Controller:
 
         self.model.fan_signal.set(self.view.fan_signal.get())
 
+        #for i in range(self.conn_repeat_nr):
+         #   try:
+        self.instrument_2.write_float(3,100,4)
+    
+        print((self.instrument_2.read_register(6,1,4)))
+        print('ok')
+      
+          #          break
+          #  except:
+           #         print(f'Fan- failure {i}')
 
         print(self.model.fan_signal.get())
 
@@ -405,6 +417,15 @@ class Controller:
     def HE_start(self):
 
         self.model.HE_signal.set(self.view.HE_signal.get())
+
+        # for i in range(self.conn_repeat_nr):
+        #     try:
+        #         self.model.data_15 = (self.instrument_2.read_float(int(self.model.mod_15_adr_var), functioncode=4))
+        #         print(f'Pobrano data_15 {i}')
+        #         break
+        #     except:
+        #         print(f'Błąd pobrania data_15 {i}')
+        #
         print(self.model.HE_signal.get())
 
     def HE_stop(self):
@@ -416,11 +437,61 @@ class Controller:
     def save_data(self):
         self.t1s = time.time()
         self.cycle_data()
-        t = str(self.t1s - self.t2s)
+        t = self.t1s - self.t2s
+        t = str(round(t,1))
+        t = t.replace('.',',')
+        
+        self.model.data_1 = round(self.model.data_1,2)
+        self.model.data_1 = str(self.model.data_1).replace('.',',')
+        
+        self.model.data_2 = round(self.model.data_2,2)
+        self.model.data_2 = str(self.model.data_2).replace('.',',')
+           
+        self.model.data_3 = round(self.model.data_3,2)
+        self.model.data_3 = str(self.model.data_3).replace('.',',')
+        
+        self.model.data_4 = round(self.model.data_4,2)
+        self.model.data_4 = str(self.model.data_4).replace('.',',')
+        
+        
+        self.model.data_5 = round(self.model.data_5,2)
+        self.model.data_5 = str(self.model.data_5).replace('.',',')
+        
+        self.model.data_6 = round(self.model.data_6,2)
+        self.model.data_6 = str(self.model.data_6).replace('.',',')
+       
+        self.model.data_7 = round(self.model.data_7,2)
+        self.model.data_7 = str(self.model.data_7).replace('.',',')
+        
+        self.model.data_8 = round(self.model.data_8,2)
+        self.model.data_8 = str(self.model.data_8).replace('.',',')
+        
+        self.model.data_9 = round(self.model.data_9,2)
+        self.model.data_9 = str(self.model.data_9).replace('.',',')
+        
+        self.model.data_10= round(self.model.data_10,2)
+        self.model.data_10 = str(self.model.data_10).replace('.',',')
+        
+        self.model.data_11 = round(self.model.data_11,2)
+        self.model.data_11 = str(self.model.data_11).replace('.',',')
+        
+        self.model.data_12 = round(self.model.data_12,2)
+        self.model.data_12 = str(self.model.data_12).replace('.',',')
+        
+        self.model.data_13 = round(self.model.data_13,2)
+        self.model.data_13 = str(self.model.data_13).replace('.',',')
+        
+        self.model.data_14 = round(self.model.data_14,2)
+        self.model.data_14 = str(self.model.data_14).replace('.',',')
+        
+       # self.model.data_15 = round(self.model.data_15,2)
+        self.model.data_15 = str(self.model.data_15).replace('.',',')
+                
+        
         self.data = [t, self.model.data_1, self.model.data_2, self.model.data_3,
                       self.model.data_4, self.model.data_5, self.model.data_6, self.model.data_7,
                       self.model.data_8, self.model.data_9, self.model.data_10, self.model.data_11, self.model.data_12,
-                      self.model.data_13, self.model.data_14, self.model.data_15]
+                      self.model.data_13, self.model.data_14, self.model.mod_15_adr_var]
 
         with open('data.csv', mode='a', newline='') as file:
             header = ['t','1', '2', '3','4','5','6','7','8','9','10','11','12','13','14','15']

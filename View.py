@@ -109,7 +109,7 @@ class View(ttk.Frame):
 
         self.dev_1_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_1_adr_var)
         self.dev_1_adr_entry.grid(row=6, column=6)
-        self.dev_1_adr_entry.insert(0, "1")
+        self.dev_1_adr_entry.insert(0, "2")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=7, column=0)
@@ -132,7 +132,7 @@ class View(ttk.Frame):
 
         self.dev_2_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_2_adr_var)
         self.dev_2_adr_entry.grid(row=10, column=6)
-        self.dev_2_adr_entry.insert(0, "1")
+        self.dev_2_adr_entry.insert(0, "2")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=11, column=0)
@@ -154,7 +154,7 @@ class View(ttk.Frame):
 
         self.dev_3_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_3_adr_var)
         self.dev_3_adr_entry.grid(row=15, column=6)
-        self.dev_3_adr_entry.insert(0, "1")
+        self.dev_3_adr_entry.insert(0, "2")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=16, column=0)
@@ -166,7 +166,7 @@ class View(ttk.Frame):
         self.mod_4_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_4_adr_var)
         self.mod_4_adr_entry.grid(row=20, column=3)
 
-        self.mod_4_adr_entry.insert(0, "70")
+        self.mod_4_adr_entry.insert(0, "342")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=20, column=4)
@@ -188,7 +188,7 @@ class View(ttk.Frame):
 
         self.mod_5_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_5_adr_var)
         self.mod_5_adr_entry.grid(row=30, column=3)
-        self.mod_5_adr_entry.insert(0, "70")
+        self.mod_5_adr_entry.insert(0, "0")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=30, column=4)
@@ -209,7 +209,7 @@ class View(ttk.Frame):
 
         self.mod_6_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_6_adr_var)
         self.mod_6_adr_entry.grid(row=40, column=3)
-        self.mod_6_adr_entry.insert(0, "70")
+        self.mod_6_adr_entry.insert(0, "2")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=40, column=4)
@@ -238,7 +238,7 @@ class View(ttk.Frame):
         self.label = ttk.Label(self.labelframe01, text='adres urządzenia')
         self.label.grid(row=50, column=5)
 
-        self.mod_7_adr_entry.insert(0, "70")
+        self.mod_7_adr_entry.insert(0, "4")
 
         self.dev_7_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_7_adr_var)
         self.dev_7_adr_entry.grid(row=50, column=6)
@@ -255,7 +255,7 @@ class View(ttk.Frame):
 
         self.mod_8_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_8_adr_var)
         self.mod_8_adr_entry.grid(row=60, column=3)
-        self.mod_8_adr_entry.insert(0, "70")
+        self.mod_8_adr_entry.insert(0, "6")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=60, column=4)
@@ -278,7 +278,7 @@ class View(ttk.Frame):
 
         self.mod_9_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_9_adr_var)
         self.mod_9_adr_entry.grid(row=70, column=3)
-        self.mod_9_adr_entry.insert(0, "70")
+        self.mod_9_adr_entry.insert(0, "8")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=70, column=4)
@@ -300,7 +300,7 @@ class View(ttk.Frame):
 
         self.mod_10_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_10_adr_var)
         self.mod_10_adr_entry.grid(row=80, column=3)
-        self.mod_10_adr_entry.insert(0, "70")
+        self.mod_10_adr_entry.insert(0, "10")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=80, column=4)
@@ -322,7 +322,7 @@ class View(ttk.Frame):
 
         self.mod_11_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_11_adr_var)
         self.mod_11_adr_entry.grid(row=90, column=3)
-        self.mod_11_adr_entry.insert(0, "70")
+        self.mod_11_adr_entry.insert(0, "358")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=90, column=4)
@@ -348,7 +348,7 @@ class View(ttk.Frame):
 
         self.mod_12_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_12_adr_var)
         self.mod_12_adr_entry.grid(row=100, column=3)
-        self.mod_12_adr_entry.insert(0, "70")
+        self.mod_12_adr_entry.insert(0, "360")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=100, column=4)
@@ -378,7 +378,7 @@ class View(ttk.Frame):
 
         self.mod_13_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_13_adr_var)
         self.mod_13_adr_entry.grid(row=120, column=3)
-        self.mod_13_adr_entry.insert(0, "70")
+        self.mod_13_adr_entry.insert(0, "362")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=120, column=4)
@@ -402,7 +402,7 @@ class View(ttk.Frame):
 
         self.mod_14_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_14_adr_var)
         self.mod_14_adr_entry.grid(row=130, column=3)
-        self.mod_14_adr_entry.insert(0, "70")
+        self.mod_14_adr_entry.insert(0, "14")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=130, column=4)
@@ -412,19 +412,19 @@ class View(ttk.Frame):
 
         self.dev_14_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.dev_14_adr_var)
         self.dev_14_adr_entry.grid(row=130, column=6)
-        self.dev_14_adr_entry.insert(0, "1")
+        self.dev_14_adr_entry.insert(0, "2")
 
         self.dist = ttk.Label(self.labelframe01)
         self.dist.grid(row=131, column=0)
 
         ###########################################################################################################################
 
-        self.label = ttk.Label(self.labelframe01, text='Zapis 15 - adres modbus')
+        self.label = ttk.Label(self.labelframe01, text='Wysterowanie')
         self.label.grid(row=140, column=2)
 
         self.mod_15_adr_entry = ttk.Entry(self.labelframe01, textvariable=self.mod_15_adr_var)
         self.mod_15_adr_entry.grid(row=140, column=3)
-        self.mod_15_adr_entry.insert(0, "70")
+        self.mod_15_adr_entry.insert(0, "wpisz")
 
         self.dist = ttk.Label(self.labelframe01, width=5)
         self.dist.grid(row=140, column=4)
@@ -568,15 +568,23 @@ class View(ttk.Frame):
         # self.stop_save_button.config(state="disabled")
 
     def fan_start(self):
+        self.controller.settings_1()
+        self.controller.settings_2()
         self.controller.fan_start()
 
     def fan_stop(self):
+        self.controller.settings_1()
+        self.controller.settings_2()
         self.controller.fan_stop()
 
     def HE_start(self):
+        self.controller.settings_1()
+        self.controller.settings_2()
         self.controller.HE_start()
 
     def HE_stop(self):
+        self.controller.settings_1()
+        self.controller.settings_2()
         self.controller.HE_stop()
 
 
